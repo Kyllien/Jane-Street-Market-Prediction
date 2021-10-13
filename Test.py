@@ -12,6 +12,9 @@ def dict_by_day (df) :
         d[i] = df.query(c)
     return(d)
 
+def describe () :
+    return d
+
 
 def main () :
     print(df.head())
@@ -32,3 +35,5 @@ def main () :
     
     d = dict_by_day(df)
     m = d[0]
+
+
