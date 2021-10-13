@@ -12,8 +12,15 @@ def dict_by_day (df) :
         d[i] = df.query(c)
     return(d)
 
-def describe () :
+def describe_dico(df) :
+    d = {}
+    for i in range (len(df.columns)+1) :
+        d[i] = df.iloc[:,[i]].describe()
     return d
+
+#Regarde stationnarite et si loi normale pour les variables, du moins type de distribution
+# 
+
 
 
 def main () :
@@ -35,5 +42,5 @@ def main () :
     
     d = dict_by_day(df)
     m = d[0]
-
+    decris = describe_dico(df)
 
