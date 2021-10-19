@@ -1,5 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+import statsmodels.tsa.stattools as stl
 
 df = pd.read_csv('C:/Users/33640/OneDrive/Bureau/train.csv')
 feat = pd.read_csv('C:/Users/33640/OneDrive/Bureau/features.csv')
@@ -9,17 +10,40 @@ def dict_by_day (df) :
     d = {}
     for i in range (max(df['date']) + 1):
         c = 'date ==' + str(i)
-        d[i] = df.query(c)
+        d[df.columns[i]] = df.query(c)
     return(d)
 
+#Function for describe all the column and put this in a dictionary
 def describe_dico(df) :
     d = {}
-    for i in range (len(df.columns)+1) :
-        d[i] = df.iloc[:,[i]].describe()
+    for i in range (len(df.columns)) :
+        d[df.columns[i]] = df.iloc[:,[i]].describe()
     return d
 
 #Regarde stationnarite et si loi normale pour les variables, du moins type de distribution
 # 
+
+#ACF for feature PROBLEM
+def acf (df) :
+    d = {}
+    for i in range (len(df.columns)) :
+        d[df.columns[i]] = pd.DataFrame(stl.acf(df.iloc[:,[i]].dropna()))
+    return d
+
+#PACF to do
+def pacf (df) :
+    d = {}
+    for i in range (len(df.columns)) :
+        d[df.columns[i]] = pd.DataFrame(stl.pacf(df.iloc[:,[i]].dropna()))
+    return d
+
+#Stationarite with kpss : Kwiatkowski-Phillips-Schmidt-Shin test
+#Null Hypothesis : The data is stationary around a constant
+def kpss (df) :
+    d={}
+    for i in range(len(df.columns)) :
+        d[df.columns[i]] = stl.kpss(df.iloc[:,[i]].dropna())[1]
+    return d
 
 
 
@@ -43,4 +67,19 @@ def main () :
     d = dict_by_day(df)
     m = d[0]
     decris = describe_dico(df)
+    
+
+    #ACF/PACF
+    d_acf = acf(df.iloc[:,7:137])
+    d_pacf = pacf(df.iloc[:,7:13])
+
+
+    #Stationarite
+    stationnarite_k = kpss(df.iloc[:,7:137]) #Long
+    # stationnarite_a = stl.adfuller(df.iloc[:,7:8]) #Df too big for this test
+
+
+
+
+
 
