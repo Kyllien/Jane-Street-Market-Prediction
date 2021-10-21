@@ -2,6 +2,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import statsmodels.tsa.stattools as stl
 
+#Base de donnée
+
 df = pd.read_csv('C:/Users/33640/OneDrive/Bureau/train.csv')
 feat = pd.read_csv('C:/Users/33640/OneDrive/Bureau/features.csv')
 
