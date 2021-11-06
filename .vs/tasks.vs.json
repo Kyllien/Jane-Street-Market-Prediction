@@ -1,0 +1,20 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskLabel": "tâche-Main",
+      "appliesTo": "Main.py",
+      "type": "launch"
+    },
+    {
+      "taskLabel": "tâche-GestionData",
+      "appliesTo": "GestionData.py",
+      "type": "module"
+    },
+    {
+      "taskLabel": "tâche-DescentGradientBoost",
+      "appliesTo": "DescentGradientBoost.py",
+      "type": "module"
+    }
+  ]
+}

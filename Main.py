@@ -1,20 +1,14 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import statsmodels.tsa.stattools as stl
+from DescentGradientBoost import GradientBoost 
 
 #Base de donnée
 
 df = pd.read_csv('C:/Users/33640/OneDrive/Bureau/train.csv')
-feat = pd.read_csv('C:/Users/33640/OneDrive/Bureau/features.csv')
+#feat = pd.read_csv('C:/Users/33640/OneDrive/Bureau/features.csv')
 
-#Function for create a dictionnary with 1 dataframe = 1 day
-def dict_by_day (df) :
-    d = {}
-    for i in range (max(df['date']) + 1):
-        c = 'date ==' + str(i)
-        d[df.columns[i]] = df.query(c)
-    return(d)
-
+ 
 #Function for describe all the column and put this in a dictionary
 def describe_dico(df) :
     d = {}
