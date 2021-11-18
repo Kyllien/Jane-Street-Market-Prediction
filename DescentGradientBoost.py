@@ -1,17 +1,5 @@
 
 
-def experiment(models,X,y, tries=10):
-    scores = []
-    for _ in tqdm(range(tries)):
-        X_train, X_test, y_train, y_test = skms.train_test_split(X, y,test_size=0.3)
-        scs = []
-        for model in models:
-            model.fit(X_train, y_train)
-            sc = model.score(X_test, y_test)
-            scs.append(sc)
-        scores.append(scs)
-    return scores
-
 
 def GradientBoost(train,action):
 
