@@ -1,6 +1,4 @@
-import pandas as pd
-import matplotlib.pyplot as plt
-from numpy import nan
+
 
 #Function for create a dictionnary with 1 dataframe = 1 day
 def dict_by_day (df) :

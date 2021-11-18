@@ -1,7 +1,13 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import statsmodels.tsa.stattools as stl
-from DescentGradientBoost import GradientBoost 
+from sklearn.linear_model import SGDClassifier
+from joblib import dump, load
+from numpy import nan
+from sklearn import model_selection as skms
+from sklearn import ensemble as ske
+from tqdm import tqdm
+
 
 #Base de donnée
 
