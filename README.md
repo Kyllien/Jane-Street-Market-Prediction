@@ -4,7 +4,7 @@ Etudiant M2 EKAP : Jean Baptiste Del'Chateau et Kyllien Romand
 
 Lien kaggle du projet : https://www.kaggle.com/c/jane-street-market-prediction/code
 
-Explication du Code :V
+Explication du Code :
 
 1-Dans un premier temps il faut ouvrir le Main.py afin de pouvoir charger les librairies<br>
 2-Ensuite il faut charger la base dans df<br>
