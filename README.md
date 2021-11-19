@@ -12,7 +12,7 @@ Explication du Code :
 4-Il faut ensuite ouvrir GestionData.py afin de charger la fonction pr_action, qui permet la creation de l'action a effectuer<br>
 5-Toujours dans le meme module il faut charger la fonction experiment qui permet d'effectuer les tests concernant les parametres des methodes<br>
 6-Ensuite pour etablir les modeles il n'y a plus qu a ouvrir et utliser les fichiers MLP.py, DescentGradientBoost.py et StochasticGradientDescent.py<br>
-les noms des fonctions étudiées dans chacuns sont plutot explicites<br>
+les noms des fonctions étudiées dans chacun sont plutot explicites de par leurs noms de fichier<br>
 
 
 
